@@ -13,7 +13,7 @@ source:
     - setup.py.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include"
   skip: True  # [win]
 
@@ -29,6 +29,7 @@ requirements:
     - pillow
     - wxpython
     - vtk
+    - hdf5
     - numpy
     - fftw
   run:
@@ -36,6 +37,7 @@ requirements:
     - pillow
     - wxpython
     - vtk
+    - hdf5
     - numpy
     - fftw
 
