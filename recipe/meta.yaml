@@ -10,7 +10,7 @@ source:
   sha256: 902d2649e56086fc7fd50f9b08f3bd55802d3d138b18d368f10eea8acc23a67d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
   skip: true  # [win]
 
