@@ -27,6 +27,7 @@ requirements:
     - wxpython
     - vtk
     - hdf5
+    - h5py
     - numpy
     - fftw
   run:
