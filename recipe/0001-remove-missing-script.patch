@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index 89e374d..6b46628 100755
+--- a/setup.py
++++ b/setup.py
+@@ -71,7 +71,7 @@ if DEBUG:
+ else:
+ 	debug_compile_args = ""
+ if platform.startswith('win'):
+-	scripts=['bonsu/bonsu', 'bonsupost']
++	scripts=['bonsu/bonsu']
+ else:
+ 	scripts=['bonsu/bonsu']
+ if platform.startswith('linux'):
