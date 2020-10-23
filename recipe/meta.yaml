@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
-  skip: True  # [win and py==36]
+  skip: true  # [win and py==36]
 
 requirements:
   build:
