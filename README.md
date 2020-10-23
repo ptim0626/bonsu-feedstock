@@ -3,7 +3,7 @@ About bonsu
 
 Home: https://github.com/bonsudev/bonsu
 
-Package license: GPL3
+Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bonsu-feedstock/blob/master/LICENSE.txt)
 
@@ -169,5 +169,4 @@ Feedstock Maintainers
 =====================
 
 * [@anthchirp](https://github.com/anthchirp/)
-* [@tschoonj](https://github.com/tschoonj/)
 
