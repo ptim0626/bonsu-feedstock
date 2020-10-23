@@ -1,5 +1,5 @@
 {% set name = "Bonsu" %}
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 017168319ca16897639151323e2566f0214bc4cd601d89e76d7bb5409b3fb706
+  sha256: 902d2649e56086fc7fd50f9b08f3bd55802d3d138b18d368f10eea8acc23a67d
 
 build:
   number: 0
