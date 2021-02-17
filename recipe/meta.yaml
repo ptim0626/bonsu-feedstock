@@ -1,5 +1,5 @@
 {% set name = "Bonsu" %}
-{% set version = "3.3.3" %}
+{% set version = "3.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0fa80fe0974eb604b3aa48411c194f99a17270bd547830c40711b1e79ffaf3c6
+  sha256: 628136d5d64ba8f833765740f5b80b2a0344085a476dce89e7fe16c06202f0db
   patches:
     - 0001-remove-missing-script.patch  # [win]
 
