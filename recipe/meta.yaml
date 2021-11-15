@@ -8,6 +8,9 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fb06573120d56c3c1ee152492581ec8f87999527ddf488229573dd745696522c
+  patches:
+    # Note: This patch can be removed once all Python envs use numpy 1.19 or newer
+    - 0001-remove-fftw-include.patch  # [win]
 
 build:
   number: 0
