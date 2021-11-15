@@ -8,13 +8,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fb06573120d56c3c1ee152492581ec8f87999527ddf488229573dd745696522c
-  patches:
-    - 0001-remove-missing-script.patch  # [win]
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
-  skip: true  # [win and py==36]
+  skip: true  # [py==36]
 
 requirements:
   build:
