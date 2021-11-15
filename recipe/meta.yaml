@@ -1,5 +1,5 @@
 {% set name = "Bonsu" %}
-{% set version = "3.3.4" %}
+{% set version = "3.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 628136d5d64ba8f833765740f5b80b2a0344085a476dce89e7fe16c06202f0db
+  sha256: fb06573120d56c3c1ee152492581ec8f87999527ddf488229573dd745696522c
   patches:
-    - 0001-remove-missing-script.patch  # [win]
+    # Note: This patch can be removed once all Python envs use numpy 1.19 or newer
+    - 0001-remove-fftw-include.patch  # [win]
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
-  skip: true  # [win and py==36]
+  skip: true  # [py==36]
 
 requirements:
   build:
