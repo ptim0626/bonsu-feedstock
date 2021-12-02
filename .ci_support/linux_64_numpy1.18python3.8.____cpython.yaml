@@ -31,7 +31,5 @@ target_platform:
 vtk:
 - 9.1.0
 zip_keys:
-- - cdt_name
-  - docker_image
 - - python
   - numpy
