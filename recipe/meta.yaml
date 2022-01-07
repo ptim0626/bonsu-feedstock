@@ -1,5 +1,5 @@
 {% set name = "Bonsu" %}
-{% set version = "3.4.2" %}
+{% set version = "3.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b90e405afd897ddbb10d13c660cf40fea63fe014fce6c50476817fa9bf760605
+  sha256: ae592e38a876bd0aca4dcbfeb509acd608303b63ffd5a5a20777dd3aa65e84b9
   patches:
     # Note: This patch can be removed once all Python envs use numpy 1.19 or newer
     - 0001-remove-fftw-include.patch  # [win]
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
   skip: true  # [py==36]
 
