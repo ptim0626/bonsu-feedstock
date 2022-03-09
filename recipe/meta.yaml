@@ -13,9 +13,9 @@ source:
     - 0001-remove-fftw-include.patch  # [win]
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
-  skip: true  # [py==36]
+  skip: true  # [py!=39]
 
 requirements:
   build:
@@ -53,6 +53,10 @@ test:
     - bonsu.operations
     - bonsu.phasing
     - bonsu.sequences
+  requires:      # [not win]
+    - pip        # [not win]
+  commands:      # [not win]
+    - pip check  # [not win]
 
 about:
   home: https://github.com/bonsudev/bonsu
