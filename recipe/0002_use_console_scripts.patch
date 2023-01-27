@@ -1,5 +1,5 @@
 diff --git a/setup.py b/setup.py
-index 22c4610..69243d1 100755
+index 22c4610..cd738f6 100755
 --- a/setup.py
 +++ b/setup.py
 @@ -191,7 +191,9 @@ def Build( type=args[0] ):
@@ -9,7 +9,7 @@ index 22c4610..69243d1 100755
 -		scripts = scripts,
 +		entry_points={
 +			'console_scripts': ['bonsu = bonsu.interface.bonsu:main'],
-+		}
++		},
  		package_data = package_data_dict,
  		data_files = data_files,
  		requires = SETUP_REQUIRES,
