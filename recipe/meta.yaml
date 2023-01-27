@@ -1,5 +1,5 @@
 {% set name = "Bonsu" %}
-{% set version = "3.4.4" %}
+{% set version = "3.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a517c27f60cab3077f235179b028ab570f0889f9267989901a8a1bcfdbd578bd
+  sha256: 49c573931057008fbd3488b54aa3c476a41d94c62461dc00798b944f5e214620
   patches:
-    # Note: This patch can be removed once all Python envs use numpy 1.19 or newer
-    - 0001-remove-fftw-include.patch  # [win]
+    - 0001_remove_desktop_reference.patch
+    - 0002_use_console_scripts.patch
 
 build:
-  number: 4
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
-  skip: true  # [py!=39]
+  entry_points:
+    - bonsu = bonsu.interface.bonsu:bonsu
 
 requirements:
   build:
@@ -53,9 +54,9 @@ test:
     - bonsu.operations
     - bonsu.phasing
     - bonsu.sequences
-  requires:      # [not win]
+  requires:   # [not win]
     - pip        # [not win]
-  commands:      # [not win]
+  commands:   # [not win]
     - pip check  # [not win]
 
 about:
