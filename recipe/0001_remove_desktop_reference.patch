@@ -3,10 +3,10 @@ index caef150..3d36ba8 100755
 --- a/setup.py
 +++ b/setup.py
 @@ -116,7 +116,6 @@ def Build( type=args[0] ):
-                iconfolder_old='share/pixmaps'
-                iconfolder='share/icons/hicolor/48x48/apps'
-                extra_data_files = [
--                       ('share/applications', ['bonsu/image/bonsu.desktop']),
-                        (iconfolder, ['bonsu/image/bonsu.png']),
-                        (iconfolder, ['bonsu/image/bonsu.xpm'])]
-                data_files += extra_data_files
+ 		iconfolder_old='share/pixmaps'
+ 		iconfolder='share/icons/hicolor/48x48/apps'
+ 		extra_data_files = [
+-			('share/applications', ['bonsu/image/bonsu.desktop']),
+ 			(iconfolder, ['bonsu/image/bonsu.png']),
+ 			(iconfolder, ['bonsu/image/bonsu.xpm'])]
+ 		data_files += extra_data_files
