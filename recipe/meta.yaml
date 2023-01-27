@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 49c573931057008fbd3488b54aa3c476a41d94c62461dc00798b944f5e214620
+  patches:
+    - 0001_remove_desktop_reference.patch
 
 build:
   number: 0
