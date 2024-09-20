@@ -13,7 +13,7 @@ source:
     - 0002_use_console_scripts.patch
 
 build:
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
   entry_points:
     - bonsu = bonsu.interface.bonsu:main
@@ -21,6 +21,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ cdt('libXxf86vm') }}  # [linux]
     - {{ cdt('mesa-libgl') }}  # [linux]
   host:
