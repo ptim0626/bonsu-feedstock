@@ -1,19 +1,19 @@
 {% set name = "Bonsu" %}
-{% set version = "3.6.0" %}
+{% set version = "3.7.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 49c573931057008fbd3488b54aa3c476a41d94c62461dc00798b944f5e214620
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
+  sha256: 8a6287c6066416d6c012a0ddd5142de304fe60a3dc9da1417ada1f2ccf63ebd7
   patches:
     - 0001_remove_desktop_reference.patch
     - 0002_use_console_scripts.patch
 
 build:
-  number: 5
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv --global-option=build_ext --global-option=-I$PREFIX/include
   entry_points:
     - bonsu = bonsu.interface.bonsu:main
