@@ -31,6 +31,7 @@ requirements:
     - hdf5
     - h5py
     - fftw
+    - cython
   run:
     - python
     - pillow
@@ -40,6 +41,7 @@ requirements:
     - h5py
     - numpy
     - fftw
+    - cython
 
 test:
   imports:
